@@ -1,0 +1,22 @@
+{
+  "name": "phaselife_budget_api",
+  "version": "0.0.1",
+  "description": "A basic budget expense tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimclan/phaselife_budget_api.git"
+  },
+  "keywords": [
+    "budget"
+  ],
+  "author": "Matthew Herron",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/swimclan/phaselife_budget_api/issues"
+  },
+  "homepage": "https://github.com/swimclan/phaselife_budget_api#readme"
+}
