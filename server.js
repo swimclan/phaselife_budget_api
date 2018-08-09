@@ -1,11 +1,14 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var winston = require('./src/services/logger');
 var db = require('./src/db');
 require('dotenv').load();
 var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('combined', { stream: winston.stream }));
 
 const sequelize = db.instance({
   host: process.env.DB_HOST,
@@ -18,14 +21,15 @@ const sequelize = db.instance({
 sequelize
   .authenticate()
   .then(() => {
-    console.log('DB Connection has been established successfully.');
+    winston.info('DB Connection has been established successfully.');
   })
   .catch(err => {
-    console.error('Unable to connect to the database');
+    winston.error(`${err.status} - ${err.message}`);
   });
 
+var Category = require('./src/models/category');
 require('./src/routes')(app);
 
 var server = app.listen(3000, function () {
-    console.log('app running on port.', server.address().port, 'NODE_ENV:', process.env.NODE_ENV);
+    winston.info('app running on port.', server.address().port, 'NODE_ENV:', process.env.NODE_ENV);
 });
