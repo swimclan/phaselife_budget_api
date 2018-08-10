@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var winston = require('./src/services/logger');
@@ -9,6 +10,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined', { stream: winston.stream }));
+app.use(cors());
 
 const sequelize = db.instance({
   host: process.env.DB_HOST,

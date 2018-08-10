@@ -1,6 +1,6 @@
 {
   "name": "phaselife_budget_api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A basic budget expense tracker",
   "main": "server.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "app-root-path": "^2.1.0",
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
