@@ -22,7 +22,7 @@ module.exports = function(sequelize, Sequelize) {
   });
 
   const Item = sequelize.define('item', {
-    category_id: { 
+    categoryId: { 
       type: Sequelize.INTEGER, 
       allowNull: false
     },
@@ -33,7 +33,6 @@ module.exports = function(sequelize, Sequelize) {
     winston.info('Item model sync\'d successfully');
   });
 
-  Item.hasOne(Category);
   Category.belongsToMany(Item, { through: 'CategoryItem' });
 
   return {
