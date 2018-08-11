@@ -1,10 +1,23 @@
 {
   "app": {
     "categories": [
+      "ATM/CASH",
+      "BABY",
       "BEAUTY",
-      "TRANSPORT",
+      "CAR REPAIR",
+      "CLEANING",
+      "CLOTHING",
+      "DINING",
+      "DOCTOR",
+      "DOG",
+      "EXERCISE",
+      "GAS",
+      "GIFTS",
       "GROCERIES",
-      "BABY"
+      "LAUNDRY",
+      "SUPPLIES",
+      "TRANSIT",
+      "VACATION"
     ]
   }
 }

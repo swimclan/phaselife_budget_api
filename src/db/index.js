@@ -1,10 +1,12 @@
 const Sequelize = require('sequelize');
-let cache;
+const models = require('../models');
+
+let sequelize = {db: null, models: null};
 
 module.exports.instance = function(options={}) {
-  if (!cache) {
+  if (!sequelize.db && !sequelize.models) {
     let {host, database, port, username, password} = options;
-    cache = new Sequelize(database, username, password, {
+    sequelize.db = new Sequelize(database, username, password, {
       host: host,
       dialect: 'postgres',
       pool: {
@@ -15,6 +17,7 @@ module.exports.instance = function(options={}) {
       },
       operatorsAliases: false
     });
+    sequelize.models = models(sequelize.db, Sequelize);
   }
-  return cache;
+  return sequelize;
 }

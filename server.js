@@ -20,7 +20,7 @@ const sequelize = db.instance({
   password: process.env.DB_PASSWORD
 });
 
-sequelize
+sequelize.db
   .authenticate()
   .then(() => {
     winston.info('DB Connection has been established successfully.');
@@ -29,7 +29,6 @@ sequelize
     winston.error(`${err.status} - ${err.message}`);
   });
 
-var Category = require('./src/models/category');
 require('./src/routes')(app);
 
 var server = app.listen(3000, function () {
