@@ -34,7 +34,7 @@ module.exports = function(sequelize, Sequelize) {
   });
 
   Item.hasOne(Category);
-  Category.belongsTo(Item);
+  Category.belongsToMany(Item);
 
   return {
     item: Item,
