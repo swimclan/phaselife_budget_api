@@ -19,6 +19,7 @@ module.exports = function(sequelize, Sequelize) {
   });
 
   Category.hasMany(Item, { foreignKey: 'categoryId', sourceKey: 'id' });
+  Item.belongsTo(Category, { foreignKey: 'categoryId', targetKey: 'id' });
 
   Item.sync({force: process.env.NODE_ENV === 'development'}).then(() => {
     winston.info('Item model sync\'d successfully');
