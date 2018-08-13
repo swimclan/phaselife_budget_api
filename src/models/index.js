@@ -5,7 +5,8 @@ var config = require('../services/config');
 module.exports = function(sequelize, Sequelize) {
   const Category = sequelize.define('category', {
     id: { type: Sequelize.INTEGER, primaryKey: true, unique: true, autoIncrement: true },
-    name: { type: Sequelize.STRING, allowNull: false }
+    name: { type: Sequelize.STRING, allowNull: false },
+    limit: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 }
   });
 
   const Item = sequelize.define('item', {
@@ -13,7 +14,7 @@ module.exports = function(sequelize, Sequelize) {
     categoryId: { 
       type: Sequelize.INTEGER, 
       allowNull: false,
-      unique: true
+      unique: false
     },
     price: { type: Sequelize.INTEGER, allowNull: false }
   });
@@ -26,7 +27,7 @@ module.exports = function(sequelize, Sequelize) {
     Category.sync({force: true}).then(() => {
       const categories = config.get('app.categories');
       eachSeries(categories, (category, callback) => {
-        Category.create({ name: category }).then(() => callback()).catch((err) => winston.error(err.message));
+        Category.create({ name: category.name, limit: category.limit }).then(() => callback()).catch((err) => winston.error(err.message));
       },
       (error) => {
         if (error) {

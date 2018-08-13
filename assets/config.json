@@ -1,23 +1,23 @@
 {
   "app": {
     "categories": [
-      "ATM/CASH",
-      "BABY",
-      "BEAUTY",
-      "CAR REPAIR",
-      "CLEANING",
-      "CLOTHING",
-      "DINING",
-      "DOCTOR",
-      "DOG",
-      "EXERCISE",
-      "GAS",
-      "GIFTS",
-      "GROCERIES",
-      "LAUNDRY",
-      "SUPPLIES",
-      "TRANSIT",
-      "VACATION"
+      {"name": "ATM/CASH", "limit": 150},
+      {"name": "BABY", "limit": 300},
+      {"name": "BEAUTY", "limit": 75},
+      {"name": "CAR REPAIR", "limit": 80},
+      {"name": "CLEANING", "limit": 100},
+      {"name": "CLOTHING", "limit": 60},
+      {"name": "DINING", "limit": 300},
+      {"name": "DOCTOR", "limit": 100},
+      {"name": "DOG", "limit": 400},
+      {"name": "EXERCISE", "limit": 50},
+      {"name": "GAS", "limit": 150},
+      {"name": "GIFTS", "limit": 150},
+      {"name": "GROCERIES", "limit": 600},
+      {"name": "LAUNDRY", "limit": 60},
+      {"name": "SUPPLIES", "limit": 300},
+      {"name": "TRANSIT", "limit": 200},
+      {"name": "VACATION", "limit": 100}
     ]
   }
 }
