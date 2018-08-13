@@ -1,23 +1,23 @@
 {
   "app": {
     "categories": [
-      {"name": "ATM/CASH", "limit": 150},
-      {"name": "BABY", "limit": 300},
-      {"name": "BEAUTY", "limit": 75},
-      {"name": "CAR REPAIR", "limit": 80},
-      {"name": "CLEANING", "limit": 100},
-      {"name": "CLOTHING", "limit": 60},
+      {"name": "ATM/CASH", "limit": 100},
+      {"name": "BABY", "limit": 280},
+      {"name": "BEAUTY", "limit": 50},
+      {"name": "CAR REPAIR", "limit": 100},
+      {"name": "CLEANING", "limit": 0},
+      {"name": "CLOTHING", "limit": 70},
       {"name": "DINING", "limit": 300},
-      {"name": "DOCTOR", "limit": 100},
-      {"name": "DOG", "limit": 400},
-      {"name": "EXERCISE", "limit": 50},
-      {"name": "GAS", "limit": 150},
-      {"name": "GIFTS", "limit": 150},
-      {"name": "GROCERIES", "limit": 600},
-      {"name": "LAUNDRY", "limit": 60},
+      {"name": "DOCTOR", "limit": 50},
+      {"name": "DOG", "limit": 435},
+      {"name": "EXERCISE", "limit": 60},
+      {"name": "GAS", "limit": 30},
+      {"name": "GIFTS", "limit": 60},
+      {"name": "GROCERIES", "limit": 700},
+      {"name": "LAUNDRY", "limit": 30},
       {"name": "SUPPLIES", "limit": 300},
-      {"name": "TRANSIT", "limit": 200},
-      {"name": "VACATION", "limit": 100}
+      {"name": "TRANSIT", "limit": 80},
+      {"name": "VACATION", "limit": 140}
     ]
   }
 }
