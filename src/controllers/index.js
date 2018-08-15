@@ -14,7 +14,7 @@ module.exports.createItem = function(req, res, next) {
 }
 
 module.exports.getItems = function(req, res, next) {
-  Item.findAll({ include: [{ model: Category }] }).then((items) => {
+  Item.findAll({ include: [{ model: Category }], order: [ ['createdAt', 'DESC'] ] }).then((items) => {
     res.status(200).json(items);
   }).catch((err) => {
     winston.error(err.message);
