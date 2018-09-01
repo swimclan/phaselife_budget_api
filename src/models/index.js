@@ -22,20 +22,19 @@ module.exports = function(sequelize, Sequelize) {
   Category.hasMany(Item, { foreignKey: 'categoryId', sourceKey: 'id' });
   Item.belongsTo(Category, { foreignKey: 'categoryId', targetKey: 'id' });
 
-  Item.sync({force: process.env.NODE_ENV === 'development'}).then(() => {
-    winston.info('Item model sync\'d successfully');
-    Category.sync({force: true}).then(() => {
-      const categories = config.get('app.categories');
-      eachSeries(categories, (category, callback) => {
-        Category.create({ name: category.name, limit: category.limit }).then(() => callback()).catch((err) => winston.error(err.message));
-      },
-      (error) => {
-        if (error) {
-          winston.error('Error occured in categories creation.')
-        }
-        winston.info('Categories created.');
-      });
+  Category.sync({force: true}).then(() => {
+    const categories = config.get('app.categories');
+    eachSeries(categories, (category, callback) => {
+      Category.create({ name: category.name, limit: category.limit }).then(() => callback()).catch((err) => winston.error(err.message));
+    },
+    (error) => {
+      if (error) {
+        winston.error('Error occured in categories creation.')
+      }
       winston.info('Category model sync\'d successfully.');
+      Item.sync({force: process.env.NODE_ENV === 'development'}).then(() => {
+        winston.info('Item model sync\'d successfully');
+      });
     });
   });
 
